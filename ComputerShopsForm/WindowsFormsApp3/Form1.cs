@@ -62,6 +62,7 @@ namespace WindowsFormsApp3
         static List<Item> ReadIn()
         {
             string[] data = File.ReadAllLines("Data.txt");
+            Console.ReadLine();
             
             List<Item> Items = new List<Item>();
 
