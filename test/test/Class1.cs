@@ -41,4 +41,38 @@ namespace test
             this.electricWindows = electricWindows;
         }
     }
+
+    class Plane : Vehicles
+    {
+        bool airWorthy;
+        int hoursUsed;
+        int altitudeLimit;
+        int seats;
+        string engines;
+
+        public Plane(string make, string model, int year, int price, int weight, string colour, string registration, bool airWorthy, int hoursUsed, int altitudeLimit, int seats, string engines) : base(make, model, year, price, weight, colour, registration)
+        {
+            this.airWorthy = airWorthy;
+            this.hoursUsed = hoursUsed;
+            this.altitudeLimit = altitudeLimit;
+            this.seats = seats;
+            this.engines = engines;
+        }
+    }
+
+    class Helicopter : Vehicles
+    {
+        bool airWorthy;
+        int hoursUsed;
+        int altitudeLimit;
+
+
+        public Helicopter(string make, string model, int year, int price, int weight, string colour, string registration, bool airWorthy, int hoursUsed, int altitudeLimit) : base(make, model, year, price, weight, colour, registration)
+        {
+            this.airWorthy = airWorthy;
+            this.hoursUsed = hoursUsed;
+            this.altitudeLimit = altitudeLimit;
+            
+        }
+    }
 }
