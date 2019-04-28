@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace test
+namespace CarBusinessSkeleton
 {
     class VehiclesTemplate
     {
@@ -27,7 +29,7 @@ namespace test
         }
 
         public virtual void Restore()
-        { 
+        {
         }
 
     }
@@ -47,15 +49,15 @@ namespace test
 
         public override void Restore()
         {
-            this.weight = (int)(this.weight * 0.9);
-            this.price = (int)(this.price * 1.25);
+            weight = weight * (int)0.9;
+            price = price * (int)1.25;
 
         }
 
         public override string ToString()
         {
-            return "Car," + make + "," + model + "," + year.ToString() + "," + price.ToString() + "," + weight.ToString() + "," + colour + "," + registration + "," + noOfDoors.ToString() + "," + engineSize.ToString() + "," 
-                + electricWindows.ToString() ;
+            return GetType().ToString().Split('.')[1] + "," + make + "," + model + "," + year + "," + price + "," + weight + "," + colour + "," + registration + "," + noOfDoors + "," + engineSize + ","
+                + electricWindows;
         }
     }
 
@@ -75,6 +77,12 @@ namespace test
             this.seats = seats;
             this.engines = engines;
         }
+
+        public override string ToString()
+        {
+            return GetType().ToString().Split('.')[1] + "," + make + "," + model + "," + year + "," + price + "," + weight + "," + colour + "," + registration + "," + airWorthy + "," + hoursUsed + ","
+                + altitudeLimit + "," + seats + "," + engines;
+        }
     }
 
     class Helicopter : VehiclesTemplate
@@ -89,7 +97,13 @@ namespace test
             this.airWorthy = airWorthy;
             this.hoursUsed = hoursUsed;
             this.altitudeLimit = altitudeLimit;
-            
+
+        }
+
+        public override string ToString()
+        {
+            return GetType().ToString().Split('.')[1] + "," + make + "," + model + "," + year + "," + price + "," + weight + "," + colour + "," + registration + "," + airWorthy + "," + hoursUsed + ","
+                + altitudeLimit;
         }
     }
 
@@ -106,5 +120,11 @@ namespace test
             this.length = length;
         }
 
+        public override string ToString()
+        {
+            return GetType().ToString().Split('.')[1] + "," + make + "," + model + "," + year + "," + price + "," + weight + "," + colour + "," + registration + "," + weightLimit + "," + noOfWheels + ","
+                + length;
+        }
     }
 }
+

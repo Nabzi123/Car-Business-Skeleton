@@ -32,6 +32,7 @@
             this.add = new System.Windows.Forms.Button();
             this.remove = new System.Windows.Forms.Button();
             this.modify = new System.Windows.Forms.Button();
+            this.closeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // vehiclesListBox
@@ -62,6 +63,7 @@
             this.remove.TabIndex = 2;
             this.remove.Text = "Remove";
             this.remove.UseVisualStyleBackColor = true;
+            this.remove.Click += new System.EventHandler(this.Remove_Click);
             // 
             // modify
             // 
@@ -74,11 +76,22 @@
             this.modify.UseVisualStyleBackColor = true;
             this.modify.Click += new System.EventHandler(this.modify_Click);
             // 
+            // closeButton
+            // 
+            this.closeButton.Location = new System.Drawing.Point(17, 13);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(101, 35);
+            this.closeButton.TabIndex = 4;
+            this.closeButton.Text = "Close";
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
+            // 
             // Vehicles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.modify);
             this.Controls.Add(this.remove);
             this.Controls.Add(this.add);
@@ -95,5 +108,6 @@
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button remove;
         private System.Windows.Forms.Button modify;
+        private System.Windows.Forms.Button closeButton;
     }
 }
